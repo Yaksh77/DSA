@@ -98,6 +98,7 @@ int main(){
     int k = 1;
     do{
         cout << k << " ";
+        cout << endl;
         k++;
     }while(k <= numEnt);
 
@@ -116,9 +117,9 @@ int main(){
         }
     }
     if(isPrime == true){
-        cout << "Prime number";
+        cout << "Prime number\n";
     }else{
-        cout << "Non prime number";
+        cout << "Non prime number\n";
     }
     
     // ----- Nested loops -----
@@ -131,6 +132,19 @@ int main(){
         }
         cout << endl;
     }
+
+    // Practices 
+
+    int divBy3Sum = 0;
+    int N;
+    cout << "Enter number N :";
+    cin >> N;
+    for(int i=0; i<N; i++){
+        if(i % 3 == 0){
+            divBy3Sum += i;
+        }
+    }
+    cout << divBy3Sum;
     
     return 0; 
 }
