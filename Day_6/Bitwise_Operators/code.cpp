@@ -7,45 +7,6 @@ void fun(){
     int x = 10;
 }
 
- // Practice-1
-    // First Approach
-    // bool findPowerOf2(int num){
-    //     if(num == 0){
-    //         return 0;
-    //     }
-    //     while(num != 1){
-    //         if(num % 2 != 0){
-    //             return 0;
-    //         }
-    //         return 1;
-    //     }
-    // }
-
-    // Second Approach
-    bool find(int num){
-        if(num == 0 || num < 0){
-            return false;
-        }
-    int ans = (!(num & (num-1)));
-    return ans;
-    }
-
-// Practice-2
-
-int reverse(int num){
-    int rem = 0;
-    int ans = 0;
-    if(num == 0){
-        cout << "Please enter value greater than 0";
-    }
-    while(num != 0){
-        rem = num % 10;
-        ans = (ans * 10) + rem;
-        num /= 10;
-    }
-    return ans;
-}
-
 int main(){
 
     cout << (5 & 10) << endl;
@@ -72,11 +33,6 @@ int main(){
 
     cout << sizeof(unsigned int) << " Bytes" << endl;
     cout << sizeof(signed int) << " Bytes" << endl;
-
-    // findPowerOf2(4) ? cout << "Yes\n" : cout << "No\n";
-
-    find(16) ? cout << "Yes\n" : cout << "No\n";
-    cout << reverse(123);
 
     return 0;
 }
