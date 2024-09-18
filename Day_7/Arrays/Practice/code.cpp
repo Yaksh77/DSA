@@ -1,4 +1,5 @@
 #include<iostream>
+#include <algorithm>
 using namespace std;
 
 void calcSumProduct(int arr[],int size){
@@ -61,17 +62,70 @@ void uniqueValue(int arr[],int size){
     // cout << size << endl;
 }
 
+// Swap alternative
+void swapAlternative(int arr[], int size){
+    for(int i = 0; i < size; i += 2){
+        if(i+1 < size){
+            swap(arr[i],arr[i+1]);
+        }
+    }
+}
+
+// find unique element
+int uniqueElement(int arr[], int size){
+    int ans = 0;
+    for(int i = 0; i < size; i++){
+        ans = ans ^ arr[i];
+    }
+    return ans;
+}
+
+void printArr(int arr[], int size){
+    for(int i = 0; i < size; i++){
+        cout << arr[i] << " ";
+    }
+}
+
+// 0 1 sort
+void sortArr(int arr[], int size){
+    int i = 0;
+    int j = size-1;
+    while(i < size && j > i){
+        if(arr[i] == 0){
+            i++;
+        }else if(arr[j] == 1){
+            j--;
+        }else if(arr[i] != 0 && arr[j] != 1){
+            swap(arr[i],arr[j]);
+            i++;
+            j--;
+        }
+        
+    }
+    printArr(arr,size);
+}
+
+
 int main(){
-    int arr[] = {1,2,3,4,5};
-    int arr1[] = {2,3,4};
+    // int arr[] = {1,2,3,4,5};
+    // int arr1[] = {2,3,4};
+    // int size = sizeof(arr) / sizeof(int);
+    // int size1 = sizeof(arr1) / sizeof(int);
     // calcSumProduct(arr,5);
     // swapMinMax(arr,5);
     // for(int i=0; i < 5; i++){
     //     cout << arr[i] << endl;
     // }
-    int size = sizeof(arr) / sizeof(int);
-    int size1 = sizeof(arr1) / sizeof(int);
-    intersection(arr,arr1,size,size1);
+    // intersection(arr,arr1,size,size1);
     // uniqueValue(arr,size);
+    // swapAlternative(arr,size);
+    // printArr(arr,size);
+
+    // int arr4[7] = {1,2,1,1,2,3,10};
+    // int result = uniqueElement(arr4,7);
+    // cout << result << endl;
+    
+    int arr5[12] = {0,1,1,0,1,0,0,1,0,1,1,0};
+    sortArr(arr5,12);
     return 0;
 }
