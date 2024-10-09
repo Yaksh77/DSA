@@ -10,8 +10,8 @@ using namespace std;
 //     for(int i = 0; i < n; i++){
 //         for(int j = i + 1; j < n; j++){
 //           int  containerWidth = j - i;
-//            int ContainerHeight = min(height[j],height[i]);
-//            int area = containerWidth * ContainerHeight;
+//            int containerHeight = min(height[j],height[i]);
+//            int area = containerWidth * containerHeight;
 //             maximumWater = max(maximumWater,area);
 //         }
 //     }
