@@ -16,25 +16,30 @@ int main(){
 
     // ----- (*) Dereferencing operator -----
 
-    cout << a << endl;
-    cout << *(ptr) << endl;
+    // cout << a << endl;
+    // cout << *(ptr) << endl;
 
-    cout << ptr << endl;
-    cout << *(ptrptr) << endl;
+    // cout << ptr << endl;
+    // cout << *(ptrptr) << endl;
 
-    cout << a << endl;
-    cout << *(ptr) << endl;
-    cout << **(ptrptr) << endl;
+    // cout << a << endl;
+    // cout << *(ptr) << endl;
+    // cout << **(ptrptr) << endl;
 
-    int b = 20;
-    int* ptr1 = &b;
-    int** ptr2 = &ptr1;
+    // int b = 20;
+    // int* ptr1 = &b;
+    // int** ptr2 = &ptr1;
 
-    cout << ptr1 << endl;
-    cout << &b << endl;
-    cout << *(ptr1) << endl;
-    cout << **(ptr2) << endl;
-    cout << *(&b) << endl;
+    // cout << ptr1 << endl;
+    // cout << &b << endl;
+    // cout << *(ptr1) << endl;
+    // cout << **(ptr2) << endl;
+    // cout << *(&b) << endl;
+
+    // ----- Null Pointer -----
+    int* nullPtr = NULL;
+    cout << nullPtr << endl;
+    cout << &nullPtr << endl;
 
 
     return 0;
