@@ -35,20 +35,30 @@ int searchSingleInSortedArray(vector<int>& arr){
     while (start <= end)
     {
        int mid = start + (end - start)/2;
-       if(arr[mid - 1] != arr[mid] && arr[mid + 1] != arr[mid]){
+       if(mid == 0){
         return arr[mid];
-       }else if(mid % 2 == 0){
-        if(arr[mid - 1] == arr[mid]){
-            end = mid - 1;
-        }else{
-            start = mid + 1;
-        }
+       }
+       else if (mid == 0 && arr[mid] != arr[mid + 1]){
+            return arr[mid];
+       }
+       else if(mid == n - 1 && arr[mid - 1] != arr[mid]){
+        return arr[mid];
+       }
+       else if(arr[mid - 1] != arr[mid] && arr[mid + 1] != arr[mid]){
+        return arr[mid];
+       }
+       else if(mid % 2 == 0){
+            if(arr[mid - 1] == arr[mid]){
+                end = mid - 1;
+            }else{
+                start = mid + 1;
+            }
        }else{
-        if(arr[mid - 1] == arr[mid]){
-            start = mid + 1;
-        }else{
-            end = mid - 1;
-        }
+            if(arr[mid - 1] == arr[mid]){
+                start = mid + 1;
+            }else{
+                end = mid - 1;
+            }
        }
     }
     return -1;
@@ -56,7 +66,7 @@ int searchSingleInSortedArray(vector<int>& arr){
 }
 
 int main(){
-    vector<int> arr = {1,1,2,2,3,3,4,8,8};
+    vector<int> arr = {1,1,2,2,3};
     int result = searchSingleInSortedArray(arr);
     cout << result;
 
